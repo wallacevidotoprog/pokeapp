@@ -47,12 +47,12 @@ export class PokemonService {
     };
   }
 
-  getFavorites(): any[] {
+  getFavorites(): Pokemon[] {
     const raw = localStorage.getItem(this.favoritesKey);
     return raw ? JSON.parse(raw) : [];
   }
 
-  saveFavorite(pokemon: any) {
+  saveFavorite(pokemon: Pokemon) {
     const favorites = this.getFavorites();
     if (!favorites.find(p => p.id === pokemon.id)) {
       favorites.push(pokemon);
@@ -66,6 +66,6 @@ export class PokemonService {
   }
 
   isFavorite(id: string): boolean {
-    return this.getFavorites().some(p => p.id === id);
+    return this.getFavorites().some(p => p.id.toString() === id);
   }
 }

@@ -11,13 +11,13 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  // {
-  //   path: 'pokemon/:id',
-  //   loadComponent: () =>
-  //     import('./pages/details/pokemonDetailsPage.component').then(
-  //       (m) => m.DetailsPage
-  //     ),
-  // },
+  {
+    path: 'details/:id',
+    loadComponent: () =>
+      import('./pages/details/pokemonDetailsPage.component').then(
+        (m) => m.DetailsPage
+      ),
+  },
   // {
   //   path: 'favorites',
   //   loadComponent: () =>

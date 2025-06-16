@@ -42,3 +42,13 @@
     text-transform: capitalize;
   }
 }
+.favorite-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+
+  
+}

@@ -59,18 +59,21 @@ export class HomePage implements OnInit {
   }
 
   nextPage() {
-    this.offset += 20;
+    this.offset += 14;
     this.loadPokemons();
   }
 
   prevPage() {
-    if (this.offset >= 20) {
-      this.offset -= 20;
+    if (this.offset >= 14) {
+      this.offset -= 14;
       this.loadPokemons();
     }
   }
 
   goToDetails(id: string) {
+
+    console.log(`Navigating to details for Pokémon ID: ${id}`);
+    
     this.router.navigate(['/details', id]);
   }
 }

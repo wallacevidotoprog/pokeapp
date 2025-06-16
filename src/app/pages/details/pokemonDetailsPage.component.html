@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-center">{{ pokemon?.name | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="pokemon" class="ion-padding">
+  <ion-card class="pokemon-details-card">
+    <div class="image-container">
+      <img [src]="pokemon.image" [alt]="pokemon.name" />
+      
+      <ion-button
+        fill="clear"
+        color="danger"
+        class="favorite-btn"
+        (click)="toggleFavorite()"
+      >
+      <span  [innerHTML]="isFavorite ? '❤️' : '♡'"></span>
+      </ion-button>
+    </div>
+
+    <ion-card-header>
+      <ion-card-title color="primary">{{
+        pokemon.name | titlecase
+      }}</ion-card-title>
+      <ion-card-subtitle>#{{ pokemon.id }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-chip
+        color="primary"
+        *ngFor="let type of pokemon.types"
+        class="type-chip"
+      >
+        <ion-icon name="flash" color="primary" class="type-icon"></ion-icon>
+        {{ type | titlecase }}
+      </ion-chip>
+
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>Altura</ion-label>
+          <ion-note slot="end">{{ pokemon.height }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Peso</ion-label>
+          <ion-note slot="end">{{ pokemon.weight }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Experiência Base</ion-label>
+          <ion-note slot="end">{{ pokemon.base_experience }}</ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Habilidades</ion-label>
+          <ion-note slot="end">{{ pokemon.abilities.join(", ") }}</ion-note>
+        </ion-item>
+      </ion-list>
+
+      <div class="stats-section">
+        <h3>Status</h3>
+        <ion-progress-bar
+          *ngFor="let stat of pokemon.stats"
+          [value]="stat.value / 150"
+          color="warning"
+        ></ion-progress-bar>
+        <div *ngFor="let stat of pokemon.stats" class="stat-label">
+          {{ stat.name | titlecase }}: {{ stat.value }}
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-button expand="block" color="danger" (click)="toggleFavorite()">
+    <ion-icon name="heart" slot="start"></ion-icon>
+    {{ isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
+  </ion-button> -->
+</ion-content>

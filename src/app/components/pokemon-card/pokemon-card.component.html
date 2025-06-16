@@ -3,4 +3,5 @@
     <ion-card-title>{{ pokemon.name }}</ion-card-title>
   </ion-card-header>
   <img [src]="pokemon.image" alt="{{ pokemon.name }}" />
+  <span class="favorite-btn" [innerHTML]="isFavorite ? '❤️' : '♡'"></span>
 </ion-card>
