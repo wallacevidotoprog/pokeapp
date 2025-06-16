@@ -21,13 +21,13 @@ import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { PokemonCardComponent } from "../../components/pokemon-card/pokemon-card.component";
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
     RouterLink,
-    IonIcon,
     IonButtons,
     IonButton,
     IonFooter,
@@ -50,7 +50,9 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.loadPokemons();
   }
-
+  ionViewWillEnter() {
+    this.loadPokemons(); 
+  }
   async loadPokemons() {
     this.pokemons = await this.pokemonService.getPokemonList(14, this.offset);
   }
