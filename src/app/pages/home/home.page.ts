@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import {
   IonButton,
@@ -38,12 +38,14 @@ import { PokemonCardComponent } from "../../components/pokemon-card/pokemon-card
     IonTitle,
     IonContent,
     CommonModule,
-    PokemonCardComponent
+    PokemonCardComponent,
+    IonCol
 ],
 })
 export class HomePage implements OnInit {
   pokemons: Pokemon[] = [];
   offset = 0;
+  @ViewChild(IonContent) content!: IonContent;
 
   constructor(private pokemonService: PokemonService, private router: Router) {}
 
@@ -60,6 +62,7 @@ export class HomePage implements OnInit {
   nextPage() {
     this.offset += 14;
     this.loadPokemons();
+    this.content.scrollToTop(500)
   }
 
   prevPage() {
