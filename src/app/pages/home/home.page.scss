@@ -25,3 +25,9 @@
 #container a {
   text-decoration: none;
 }
+
+ion-row.md.hydrated {
+    display: flex
+;
+    justify-content: center;
+}

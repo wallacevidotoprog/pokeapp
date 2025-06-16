@@ -12,7 +12,7 @@ export class PokemonService {
   private apiUrl =  `${environment.api_pokemon}pokemon`;
   private favoritesKey = 'favoritePokemons';
 
-  async getPokemonList(limit = 20, offset = 0) {
+  async getPokemonList(limit = 14, offset = 0) {
     const response = await axios.get(`${this.apiUrl}?limit=${limit}&offset=${offset}`);
     const results = response.data.results;
 

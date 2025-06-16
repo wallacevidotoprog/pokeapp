@@ -19,6 +19,7 @@ import {
 } from '@ionic/angular/standalone';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonCardComponent } from "../../components/pokemon-card/pokemon-card.component";
 
 @Component({
   selector: 'app-home',
@@ -29,10 +30,10 @@ import { PokemonService } from 'src/app/services/pokemon.service';
     IonButtons,
     IonButton,
     IonFooter,
-    IonCardTitle,
-    IonCardHeader,
-    IonCard,
-    IonCol,
+    // IonCardTitle,
+    // IonCardHeader,
+    // IonCard,
+    // IonCol,
     IonRow,
     IonGrid,
     IonHeader,
@@ -40,7 +41,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
     IonTitle,
     IonContent,
     CommonModule,
-  ],
+    PokemonCardComponent
+],
 })
 export class HomePage implements OnInit {
   pokemons: Pokemon[] = [];
@@ -53,7 +55,7 @@ export class HomePage implements OnInit {
   }
 
   async loadPokemons() {
-    this.pokemons = await this.pokemonService.getPokemonList(20, this.offset);
+    this.pokemons = await this.pokemonService.getPokemonList(14, this.offset);
   }
 
   nextPage() {

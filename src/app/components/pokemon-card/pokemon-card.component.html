@@ -1,0 +1,6 @@
+<ion-card (click)="onClick()" class="pokemon-card">
+  <ion-card-header>
+    <ion-card-title>{{ pokemon.name }}</ion-card-title>
+  </ion-card-header>
+  <img [src]="pokemon.image" alt="{{ pokemon.name }}" />
+</ion-card>
