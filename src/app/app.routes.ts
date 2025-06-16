@@ -18,11 +18,11 @@ export const routes: Routes = [
         (m) => m.DetailsPage
       ),
   },
-  // {
-  //   path: 'favorites',
-  //   loadComponent: () =>
-  //     import('./pages/favorites/pokemonFavorites.component').then(
-  //       (m) => m.FavoritesPage
-  //     ),
-  // },
+  {
+    path: 'favorites',
+    loadComponent: () =>
+      import('./pages/favorites/pokemonFavorites.component').then(
+        (m) => m.FavoritesPage
+      ),
+  },
 ];

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {
   IonButton,
   IonButtons,
@@ -26,14 +26,11 @@ import { PokemonCardComponent } from "../../components/pokemon-card/pokemon-card
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
+    RouterLink,
     IonIcon,
     IonButtons,
     IonButton,
     IonFooter,
-    // IonCardTitle,
-    // IonCardHeader,
-    // IonCard,
-    // IonCol,
     IonRow,
     IonGrid,
     IonHeader,
