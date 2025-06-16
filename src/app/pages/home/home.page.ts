@@ -17,6 +17,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
+import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -42,7 +43,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   ],
 })
 export class HomePage implements OnInit {
-  pokemons: any[] = [];
+  pokemons: Pokemon[] = [];
   offset = 0;
 
   constructor(private pokemonService: PokemonService, private router: Router) {}
