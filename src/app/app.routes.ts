@@ -2,14 +2,14 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () =>
-      import('./pages/home/home.page').then((m) => m.HomePage),
-  },
-  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./pages/home/home.page').then((m) => m.HomePage),
   },
   {
     path: 'details/:id',
@@ -24,5 +24,9 @@ export const routes: Routes = [
       import('./pages/favorites/pokemonFavorites.component').then(
         (m) => m.FavoritesPage
       ),
+  },
+  {
+    path: '**',
+    redirectTo: 'home', 
   },
 ];
