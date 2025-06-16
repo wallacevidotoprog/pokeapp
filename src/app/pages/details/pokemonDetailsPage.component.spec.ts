@@ -1,23 +1,23 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {  ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PokemonDetailsPageComponent } from './pokemonDetailsPage.component';
+import { DetailsPage } from './pokemonDetailsPage.component';
 
 describe('PokemonDetailsPageComponent', () => {
-  let component: PokemonDetailsPageComponent;
-  let fixture: ComponentFixture<PokemonDetailsPageComponent>;
+  let component: DetailsPage;
+  let fixture: ComponentFixture<DetailsPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokemonDetailsPageComponent ]
+      declarations: [ DetailsPage ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PokemonDetailsPageComponent);
+    fixture = TestBed.createComponent(DetailsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -26,3 +26,9 @@ describe('PokemonDetailsPageComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+function async(fn: () => void): () => Promise<void> {
+  return () => new Promise<void>((resolve) => {
+    fn();
+    resolve();
+  });
+}

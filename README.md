@@ -15,8 +15,8 @@ Você pode testar a Pokédex diretamente no navegador clicando no link abaixo:
 > 📷 **Imagem do App:**
 > *Desktop:
 > ![Screenshot](./docs/desk1.PNG)
-> ![Screenshot](./docs/desk2.PNG)
-> ![Screenshot](./docs/desk3.PNG)
+> ![Screenshot](./docs/deck2.PNG)
+> ![Screenshot](./docs/deck3.PNG)
 
  *Smartphone:
 > ![Screenshot](./docs/cel1.png)
