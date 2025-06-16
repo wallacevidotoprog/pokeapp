@@ -1,0 +1,28 @@
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./pages/home/home.page').then((m) => m.HomePage),
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  // {
+  //   path: 'pokemon/:id',
+  //   loadComponent: () =>
+  //     import('./pages/details/pokemonDetailsPage.component').then(
+  //       (m) => m.DetailsPage
+  //     ),
+  // },
+  // {
+  //   path: 'favorites',
+  //   loadComponent: () =>
+  //     import('./pages/favorites/pokemonFavorites.component').then(
+  //       (m) => m.FavoritesPage
+  //     ),
+  // },
+];
